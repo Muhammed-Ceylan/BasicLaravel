@@ -1,1 +1,0 @@
-Deneme ben geldim
