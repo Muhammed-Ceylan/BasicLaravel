@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api;
+
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupportFormController;
@@ -38,3 +41,10 @@ Route::patch("/users/{id}/update", [UserController::class, "update"])->name("use
 
 Route::put("/users/{id}/updateAll", [UserController::class, "updateAll"])->name("user.updateAll");
 Route::delete("/user/{id}/delete", [UserController::class, "delete"])->name("user.delete");
+
+Route::any("/everything", function () {
+    dd("Accept all route function.");
+});
+
+Route::resource("articles", ArticleController::class);
+Route::apiResource('api/articles', Api\ArticleController::class);
