@@ -43,7 +43,7 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view("admin.articles.edit");
     }
 
     /**
@@ -59,6 +59,6 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd($id . "id ye sahip kullanıcı silindi.");
     }
 }
