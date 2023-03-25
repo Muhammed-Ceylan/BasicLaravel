@@ -1,11 +1,15 @@
-@extends("layouts.front")
+@extends('layouts.front')
 
 
-@section("content")
+@section('content')
+    Gelen Yaş Değeri: {{ $age ?? $person->age }}
+    <hr>
+    Gelen 2. Değeri: {{ $name ?? 'değeri gönderilmedi.' }}
+    <hr>
 @endsection
 
-@section("css")
+@section('css')
 @endsection
 
-@section("js")
+@section('js')
 @endsection
