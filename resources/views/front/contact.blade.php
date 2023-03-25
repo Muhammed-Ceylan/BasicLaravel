@@ -42,6 +42,47 @@
             <button class="btn btn-success" type="submit">Gönder</button>
         </form>
     </div>
+
+    Support Form 2
+    <br>
+    <div class="col-8 mx-auto">
+        <form action="{{ route('user.update', ['id' => 6]) }}" method="POST">
+            @csrf
+            {{-- Directive Method --}}
+            @method('PATCH')
+            <input type="email" class="form-control" name="email">
+            <br>
+            <button class="btn btn-success" type="submit">Gönder</button>
+        </form>
+    </div>
+
+    Put Kullanımı
+    <div class="col-8 mx-auto">
+        <form action="{{ route('user.updateAll', ['id' => 5]) }}" method="POST">
+            @csrf
+            {{-- Directive Method --}}
+            @method('PUT')
+            <input type="text" class="form-control" name="fullname">
+            <br>
+            <input type="email" class="form-control" name="email">
+            <br>
+            <button class="btn btn-success" type="submit">Gönder</button>
+        </form>
+    </div>
+
+    Delete Kullanımı
+    <div class="col-8 mx-auto">
+        <form action="{{ route('user.delete', ['id' => 4]) }}" method="POST">
+            @csrf
+            {{-- Directive Method --}}
+            @method('DELETE')
+            <input type="text" class="form-control" name="fullname">
+            <br>
+            <input type="email" class="form-control" name="email">
+            <br>
+            <button class="btn btn-success" type="submit">Gönder</button>
+        </form>
+    </div>
 @endsection
 
 @section('css')
