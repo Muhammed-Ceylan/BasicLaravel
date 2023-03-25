@@ -48,3 +48,11 @@ Route::any("/everything", function () {
 
 Route::resource("articles", ArticleController::class);
 Route::apiResource('api/articles', Api\ArticleController::class);
+
+Route::get("/users/{id}", [UserController::class, "show"])
+    ->name("user.show")
+    ->whereNumber("id");
+
+Route::get("/user/{role}", [UserController::class, "checkRole"])
+    ->name("user.roleCheck")
+    ->whereIn("role", ["admin", "user"]);

@@ -20,4 +20,14 @@ class UserController extends Controller
     {
         dd("Silinecek User ID: " . $request->id);
     }
+
+    public function show(Request $request, int $id)
+    {
+        dd($id);
+    }
+
+    public function checkRole($role)
+    {
+        dd($role);
+    }
 }
