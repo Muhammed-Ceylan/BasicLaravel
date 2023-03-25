@@ -2,16 +2,19 @@
 
 
 @section('content')
-    {{-- Componentler içerisinde attribute leride kullanarak renklendirme --}}
-    {{-- <hr>
-    @php
-        $placeholder = 'Ad Soyadı Giriniz';
-        $color = 'danger';
-    @endphp
+    <x-article>
+        <x-slot:title2> Makale 2</x-slot>
 
-    <x-input-text :type="'text'" :placeholder="$placeholder" class="bg-warning" />
-    <hr>
-    <x-input-text2 :type="'text'" :placeholder="$placeholder" class="bg-" :color="$color" :error:"false" /> --}}
+        <x-slot name="title"> Makale 1</x-slot>
+        <hr>
+        
+        <x-slot name="content">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. In tenetur similique velit nostrum
+            sunt. Esse dolore, deserunt cupiditate nobis atque voluptates ea impedit. Asperiores placeat incidunt dolorem
+            cupiditate fugit corrupti.
+        </x-slot>
+        <hr>
+    </x-article>
 @endsection
 
 @section('css')
