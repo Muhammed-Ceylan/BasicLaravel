@@ -18,6 +18,6 @@ class ContactController extends Controller
 
     public function user(Request $request, int $id, string $name)
     {
-        dd($request->$name);
+        dd($request->all());
     }
 }

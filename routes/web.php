@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupportFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/contact', [ContactController::class, "showForm"])->name("contact");
 Route::post('/contact', [ContactController::class, "contact"]);
 Route::post('/user/{id}/{name}', [ContactController::class, "user"])
     ->name('user')
-    ->where(["id" => "[0:9]+", "name" => "[a:z]+"]);
+    ->where(['id' => '[0:9]+', 'name' => '[a:z]+']);
 
-
+Route::match(['get', 'post'], '/support-form', [SupportFormController::class, "support"])
+    ->name("support-form.support");
