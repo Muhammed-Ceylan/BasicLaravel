@@ -58,8 +58,8 @@ Route::get("/user/{role}", [UserController::class, "checkRole"])
     ->whereIn("role", ["admin", "user"]);
 
 Route::prefix("/admin")->group(function () {
-    Route::get("/edit-article", [ArticleController::class, "edit"])
-        ->name("admin.articleEdit");
+    Route::get("/create-article", [ArticleController::class, "create"])
+        ->name("admin.create");
     Route::get("/article/{id}/delete", [ArticleController::class, "destroy"])
         ->name("admin.articleDestroy");
 });
