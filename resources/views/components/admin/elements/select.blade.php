@@ -10,10 +10,20 @@
             <label for="{{ $id }}" class="mb-2 {{ $labelClasses ?? '' }}">{{ $label }}</label>
         @endisset
     @endif
-    <input type="{{ $type ?? 'text' }}" name="{{ $name ?? '' }}" id="{{ $id }}"
-        class="{{ $type != 'submit' && $type != 'button' && $type != 'checkbox' ? 'form-control' : '' }} {{ $inputClasses ?? '' }}"
-        placeholder="{{ (isset($placeholder) ? $placeholder : isset($label)) ? $label : '' }}"
-        {{ isset($isDisabled) && $isDisabled ? 'disabled' : '' }} value="{{ $defaultValue ?? '' }}" />
+
+    <select 
+        class="form-control {{ $inputClasses ?? '' }}" 
+        name="{{ $name ?? '' }}" 
+        id="{{ $id }}"
+        {{ isset($isDisabled) && $isDisabled ? 'disabled' : '' }}>
+        @foreach ($options as $key => $value)
+            <option {{ isset($defaultValue) && $defaultValue == $key ? 'selected' : '' }} 
+                value="{{ $key }}">
+                {{ $value }}
+            </option>
+        @endforeach
+    </select>
+
     @if (isset($isLabelAfter) && $isLabelAfter)
         @isset($label)
             <label for="{{ $id }}" class="mb-2 {{ $labelClasses ?? '' }}">{{ $label }}</label>
